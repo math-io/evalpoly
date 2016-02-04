@@ -30,7 +30,7 @@ var v = evalpoly( [3,2,1], 10 );
 The coefficients should be ordered in __ascending__ degree. For example, for a [polynomial][polynomial]
 
 <div class="equation" align="center" data-raw-text="c_nx^n + c_{n-1}x^{n-1} + \ldots + c_1x^1 + c_0 = \sum_{i=0}^{n} c_ix^i" data-equation="eq:polynomial">
-	<img src="" alt="Polynomial expression.">
+	<img src="https://cdn.rawgit.com/math-io/polynomial/ada0be8175ce943fd804dd191755c8b303021a20/docs/img/eqn.svg" alt="Polynomial expression.">
 	<br>
 </div>
 
