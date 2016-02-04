@@ -5,6 +5,7 @@ var evalpoly = require( './../lib' );
 
 var coef;
 var sign;
+var poly;
 var eqn;
 var v;
 var i;
@@ -26,6 +27,15 @@ console.log( 'f(x) = %s', eqn );
 for ( i = 0; i < 100; i++ ) {
 	v = Math.random() * 100;
 	console.log( 'f(%d) = %d', v, evalpoly( coef, v ) );
+}
+
+// Generate an `evalpoly` function...
+poly = evalpoly.factory( coef );
+
+console.log( '\nf(x) = %s', eqn );
+for ( i = 0; i < 100; i++ ) {
+	v = Math.random()*100 - 50;
+	console.log( 'f(%d) = %d', v, poly( v ) );
 }
 
 function toStr( coef ) {
