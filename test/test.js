@@ -2,36 +2,36 @@
 
 // MODULES //
 
-var test = require( 'tape' );
+var tape = require( 'tape' );
 var evalpoly = require( './../lib' );
 
 
 // TESTS //
 
-test( 'main export is a function', function test( t ) {
+tape( 'main export is a function', function test( t ) {
 	t.ok( typeof evalpoly === 'function', 'main export is a function' );
 	t.end();
 });
 
-test( 'if provided an empty coefficient array, the function returns `0`', function test( t ) {
+tape( 'if provided an empty coefficient array, the function returns `0`', function test( t ) {
 	var v = evalpoly( [], 10 );
 	t.equal( v, 0, 'returns 0' );
 	t.end();
 });
 
-test( 'if provided only 1 coefficient, the function returns that coefficient', function test( t ) {
+tape( 'if provided only 1 coefficient, the function returns that coefficient', function test( t ) {
 	var v = evalpoly( [ 1 ], 10 );
 	t.equal( v, 1, 'returns first coefficient' );
 	t.end();
 });
 
-test( 'if the value at which to evaluate a polynomial is `0`, the function returns the first coefficient', function test( t ) {
+tape( 'if the value at which to evaluate a polynomial is `0`, the function returns the first coefficient', function test( t ) {
 	var v = evalpoly( [3,2,1], 0 );
 	t.equal( v, 3, 'returns first coefficient' );
 	t.end();
 });
 
-test( 'the function evaluates a polynomial', function test( t ) {
+tape( 'the function evaluates a polynomial', function test( t ) {
 	var c;
 	var v;
 
