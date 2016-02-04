@@ -24,7 +24,7 @@ Evaluates a [polynomial][polynomial] having coefficients `c` and degree `n` at a
 
 ``` javascript
 var v = evalpoly( [3,2,1], 10 );
-// returns 321
+// returns 123 => 3*10^0 + 2*10^1 + 1*10^2
 ```
 
 The coefficients should be ordered in __ascending__ degree. For example, for a [polynomial][polynomial]
