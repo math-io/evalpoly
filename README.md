@@ -43,6 +43,23 @@ the coefficients would be
 matching the summation notation.
 
 
+#### evalpoly.factory( c )
+
+Uses code generation to in-line coefficients and return a reusable `function` for evaluating a [polynomial][polynomial].
+
+``` javascript
+var poly = evalpoly.factory( [3,2,1] );
+
+var v = poly( 10 );
+// returns 123 => 3*10^0 + 2*10^1 + 1*10^2
+
+v = poly( 5 );
+// returns 38 => 3*5^0 + 2*5^1 + 1*5^2
+```
+
+__Note__: For hot code paths in which coefficients are invariant, the generated `function` will be more performant than the main export.
+
+
 ## Examples
 
 ``` javascript
@@ -51,6 +68,7 @@ var evalpoly = require( 'math-evalpoly' );
 
 var coef;
 var sign;
+var poly;
 var v;
 var i;
 
@@ -69,6 +87,13 @@ for ( i = 0; i < coef.length; i++ ) {
 for ( i = 0; i < 100; i++ ) {
 	v = Math.random() * 100;
 	console.log( 'f(%d) = %d', v, evalpoly( coef, v ) );
+}
+
+// Generate an `evalpoly` function...
+poly = evalpoly.factory( coef );
+for ( i = 0; i < 100; i++ ) {
+	v = Math.random()*100 - 50;
+	console.log( 'f(%d) = %d', v, poly( v ) );
 }
 ```
 
