@@ -40,6 +40,8 @@ the coefficients would be
 [c_0, c_1, ..., c_(n-1), c_n]
 ```
 
+matching the summation notation.
+
 
 ## Examples
 
